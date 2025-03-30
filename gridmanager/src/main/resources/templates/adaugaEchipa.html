@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Adaugă Echipa</title>
+</head>
+<body>
+<h1>Adaugă o echipă</h1>
+<form action="/api/teams" method="post">
+    <label for="name">Nume echipă:</label>
+    <input type="text" id="name" name="name" required><br>
+
+    <label for="headquarters">Sediu:</label>
+    <input type="text" id="headquarters" name="headquarters" required><br>
+
+    <button type="submit">Adaugă</button>
+</form>
+<a href="/">Înapoi la pagina principală</a>
+</body>
+</html>

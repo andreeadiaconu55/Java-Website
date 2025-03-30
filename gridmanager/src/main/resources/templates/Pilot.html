@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista Piloți</title>
+</head>
+<body>
+<h1>Lista Piloți</h1>
+<table border="1">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Nume</th>
+        <th>Vârstă</th>
+        <th>Echipă</th>
+        <th>Acțiuni</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="pilot : ${drivers}">
+        <td th:text="${pilot.id}"></td>
+        <td th:text="${pilot.name}"></td>
+        <td th:text="${pilot.age}"></td>
+        <td th:text="${pilot.echipa.name}"></td>
+        <td>
+            <a th:href="@{'/update-driver-form/' + ${pilot.id}}">Modifică</a> |
+            <a th:href="@{'/delete-driver/' + ${pilot.id}}" onclick="return confirm('Sigur vrei să ștergi acest pilot?');">Șterge</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<a href="/">Înapoi la pagina principală</a>
+</body>
+</html>
